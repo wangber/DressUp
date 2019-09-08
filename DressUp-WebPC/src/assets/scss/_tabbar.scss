@@ -1,0 +1,89 @@
+@import "../../assets/scss/mixins";
+@import "../../assets/scss/variables";
+
+.g-tabbar{
+  height: 8vh;
+  background-color: #fff;
+  box-shadow: 5px 0 10px #C7C7C7;
+  background-color: #fff;
+  z-index: 1000000;
+  color: #000;
+  text-decoration: none;
+  .logo{
+    height: 8vh;
+    @include flex-center(column);
+    img{
+      height: 95%;
+    }
+  }
+  .search-nav{
+    height: 8vh;
+    .search{
+      height: 8vh;
+      @include flex-center(column);
+      .el-input{
+        width: 95%;
+      }
+    }
+    .nav-bar{
+      ul{
+        display: flex;
+        height: 8vh;
+        width: 80%;
+        margin: 0 auto;
+        color: #000;
+
+        .g-tabbar-item{
+          flex: 1;
+          list-style: none;
+          text-decoration: none;
+          @include flex-center(column);
+          margin: 0 15px;
+          transition: background-color .75s;
+        }
+        .g-tabbar-item:hover{
+          background-color: $bg-theme;
+          border-bottom: 3px solid #FF9797;
+        }
+      }
+    }
+  }
+  .login-regist{
+    height: 8vh;
+    @include flex-center();
+    span{
+      cursor: pointer;
+    }
+    span:hover{
+      color: #f00;
+    }
+  }
+  .loginMask,
+  .registerMask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.2);
+    z-index: 10000;
+
+    .login,
+    .register{
+      @include flex-center(column);
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      margin-top: -200px;
+      margin-left: -200px;
+      width: 400px;
+      height: 400px;
+      box-shadow: 0 0 5px #696969;
+      background-color: #fff;
+
+      input{
+        display: block;
+      }
+    }
+  }
+}
